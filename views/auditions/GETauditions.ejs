@@ -1,0 +1,31 @@
+
+<% layout('/layouts/boilerplate')%>
+
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-10 ">
+
+
+
+<% for (let audition of auditions) { %>
+  <div class="">
+    <div class="h-3  lg:w-48 lg:h-auto flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden " style="background-image: url('<%= audition.file %>')" title="Woman holding a mug">
+    </div>
+    <div class="border-r border-b border-l border-t sm:border-rounded md:border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b lg:rounded-t lg:rounded-r p-4 flex flex-col justify-between leading-normal  rounded-t-lg rounded-b-lg w-full h-full hover:bg-gradient-to-r from-blue-100 to-blue-400 shadow-lg transform">
+      <div class="mb-8">
+        <p class="text-sm text-gray-600 flex items-center">
+          <i class="mr-1 fa-solid fa-masks-theater"></i>Broadway Binder
+        </p>
+        <div class="text-gray-900 font-bold text-xl mb-2"><a href="/auditions/<%= audition._id %>"><%= audition.show %></a></div>
+        <div class="text-gray-900 font-bold text-xl mb-2"><%= audition.theater %></div>
+        <p class="text-gray-700 text-base"><%= audition.description %></p>
+      </div>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-xs mx-auto w-1/2"><a href="/auditions/<%= audition._id %>">View <%= audition.show %> audition</a>
+      
+      </button>
+      <div class="text-sm">
+        <p class="text-gray-600 mt-3"><%= audition.date %></p>
+      </div>
+    </div>
+  </div>
+<% } %>
+
+</div>

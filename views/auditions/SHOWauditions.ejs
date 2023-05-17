@@ -1,0 +1,55 @@
+
+    <!-- <h1>New Audition Insert</h1>
+    <h2><%= audition.theater%></h2>
+    <h2><%= audition.show%></h2>
+    <footer>
+        <p> <form action="/auditions/<%= audition._id %>?_method=DELETE" method="POST">
+        <button>DELETE</button>
+        </form></p>
+        <p><a href="/auditions/<%= audition._id %>/edit">Edit</a></p>
+        <!-- <a href="./GETauditions.ejs">All Auditions</a> -->
+        <!-- <a href="/auditions">All Auditions</a>
+    </footer> -->
+
+
+    <% layout('/layouts/boilerplate')%>
+<div class="flex flex-col items-center justify-center mt-40 ">
+    <div class="w-1/3 overflow-hidden ">
+
+          <div class="">
+            <div class="h-3  lg:w-48 lg:h-auto flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden " style="background-image: url('<%= audition.file %>')" title="">
+            </div>
+            <div class="border-r border-b border-l border-t sm:border-rounded md:border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b lg:rounded-t lg:rounded-r p-4 flex flex-col justify-between leading-normal  rounded-t-lg rounded-b-lg w-full h-full">
+              <div class="mb-8">
+                <p class="text-sm text-gray-600 flex items-center">
+                  <i class="mr-3 fa-solid fa-masks-theater"></i>Broadway Binder
+                </p>
+                <div class="text-gray-900 font-bold text-xl mb-2"><a href="/auditions/<%= audition._id %>"><%= audition.show %></a></div>
+                <div class="text-gray-900 font-bold text-xl mb-2"><%= audition.theater %></div>
+                <p class="text-gray-700 text-base"><%= audition.description %></p>
+              </div>
+
+              <div class="flex items-center justify-center
+             ">
+
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 w-24  ">
+              <a href="/auditions/<%= audition._id %>/edit">Edit</a>
+            </button>
+
+              <p> <form action="/auditions/<%= audition._id %>?_method=DELETE" method="POST">
+                <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-24 ">DELETE</button>
+                </form></p>
+
+            </div>
+
+              <div class="text-sm">
+                <p class="text-gray-600 mt-3"><%= audition.date %></p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+
+
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-xs mt-8"><a href="/auditions">All Auditions</a></button>
+    </div>
